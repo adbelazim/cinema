@@ -37,6 +37,11 @@ public class MovieFacadeREST extends AbstractFacade<Movie> {
     @Override
     @Consumes({"application/json"})
     public void create(Movie entity) {
+        System.out.println("recibiendo nombre " + entity.getNameMovie());
+        System.out.println("recibiendo descripcion " + entity.getDescriptionMovie());
+        System.out.println("recibiendo year " + entity.getYearMovie());
+         
+        entity.setIdMovie(null);
         super.create(entity);
     }
 
@@ -44,6 +49,9 @@ public class MovieFacadeREST extends AbstractFacade<Movie> {
     @Path("{id}")
     @Consumes({"application/json"})
     public void edit(@PathParam("id") Integer id, Movie entity) {
+        System.out.println("recibiendo nombre " + entity.getNameMovie());
+        System.out.println("recibiendo descripcion " + entity.getDescriptionMovie());
+        System.out.println("recibiendo year " + entity.getYearMovie());
         super.edit(entity);
     }
 
